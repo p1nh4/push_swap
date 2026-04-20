@@ -1,4 +1,4 @@
-NAME			:= push_swap.a
+NAME			:= push_swap
 CC				:= cc
 C_FLAGS			:= -Wall -Wextra -Werror -gdwarf-4
 AR				:= ar
@@ -7,15 +7,19 @@ SRC_DIR			:= src
 OBJ_DIR			:= obj
 LIB				:= lib
 LIBFT			:= $(LIB)/libft.a
+LINK			:= -Llib -lft
 SRC_INCLUDE		:= push_swap.h
 SRC				:= push_swap.c
 OBJ				:= $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRC))
 RM				:= rm -f
 
-all : $(NAME)
+all : $(LIBFT) $(NAME)
 
 $(NAME) : $(OBJ)
-	$(AR) $(AR_FLAGS) $@ $^
+	$(CC) $(C_FLAGS) -o $@ $^ $(LINK)
+
+$(LIBFT) :
+	$(MAKE) -C $(LIB)
 
 $(OBJ_DIR)/%.o : %.c
 	mkdir -p $(OBJ_DIR)
