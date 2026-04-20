@@ -6,13 +6,13 @@
 /*   By: davidos- <davidos-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 18:56:15 by davidos-          #+#    #+#             */
-/*   Updated: 2026/04/18 18:47:40 by davidos-         ###   ########.fr       */
+/*   Updated: 2026/04/20 23:31:01 by davidos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../lib/libft.h"
+#include "lib/libft.h"
 
 int	ft_is_unique(int *arr, int len)
 {
@@ -102,28 +102,32 @@ int	main(int argc, char **argv)
 		{
 			if (!ft_is_valid_int(argv[i]))
 			{
-				write(2, "Error", 5);
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			if (!ft_is_int_range(argv[i]))
 			{
-				write(2, "Error", 5);
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			i++;
 		}
 	}
-
-	num = malloc(sizeof(int) * (arc - 1));
+	num = malloc(sizeof(int) * (argc - 1));
 	if (!num)
 		return (0);
 	i = 0;
 	while (i < (argc - 1))
 	{
-		num[i] = atoi(argv[i + 1]);
+		num[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
-
-
-	return ();
+	if (!ft_is_unique(num, argc - 1))
+	{
+		write(2, "Error\n", 6);
+		free(num);
+		return (0);
+	}
+	free(num);
+	return (0);
 }
