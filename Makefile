@@ -9,7 +9,8 @@ LIB				:= lib
 LIBFT			:= $(LIB)/libft.a
 LINK			:= -Llib -lft
 SRC_INCLUDE		:= push_swap.h
-SRC				:= push_swap.c
+SRC				:= push_swap.c	\
+				   ft_stack_init.c
 OBJ				:= $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRC))
 RM				:= rm -f
 

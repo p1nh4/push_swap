@@ -6,13 +6,14 @@
 /*   By: davidos- <davidos-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 18:56:15 by davidos-          #+#    #+#             */
-/*   Updated: 2026/04/20 23:31:01 by davidos-         ###   ########.fr       */
+/*   Updated: 2026/04/22 21:14:38 by davidos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "lib/libft.h"
+#include "push_swap.h"
 
 int	ft_is_unique(int *arr, int len)
 {
