@@ -1,0 +1,25 @@
+✅ Parsing      → validação dos argumentos
+✅ Estrutura    → t_stack, ft_create_stack
+⏳ Operações   → sa, sb, pa, pb, ra, rb, rra, rrb, ss, rr, rrr
+⏳ Algoritmo   → Turkish sort
+⏳ Main         → ligar tudo
+
+
+swap — troca os dois primeiros elementos
+push — move o topo de uma stack para outra
+rotate — o primeiro vai para o fundo
+reverse rotate — o último vai para o topo
+
+
+
+ft_swap_ops.c   → sa, sb, ss
+ft_push_ops.c   → pa, pb
+ft_rotate_ops.c → ra, rb, rr
+ft_rev_ops.c    → rra, rrb, rrr
+
+
+// troca no pa e pb (push)
+temp = *b          → guarda o primeiro nó [3]
+*b = (*b)->next    → b avança para [4]
+temp->next = *a    → [3] aponta para [1]
+*a = temp          → a (primeiro no) passa a ser [3]
